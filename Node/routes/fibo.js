@@ -1,14 +1,9 @@
-// @deno-types="npm:@types/express@4.17.15"
-import express from "npm:express@4.18.2";
+var express = require('express');
+var router = express.Router();
 
-const app = express();
-
-app.get("/", (req, res) => {
-  // send a simple json response
-  res.json({ message: "Hello World!" });
-});
-app.get("/fibo", (req, res) => {
-  function fibonacci(n:any) {
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  function fibonacci(n) {
     let fibSequence = [0, 1];
     for (let i = 2; i < n; i++) {
       fibSequence.push(fibSequence[i - 1] + fibSequence[i - 2]);
@@ -22,4 +17,5 @@ app.get("/fibo", (req, res) => {
   // Send the Fibonacci sequence as the response
   res.send(fibNumbers.join(', '));
 });
-app.listen(8000);
+
+module.exports = router;
