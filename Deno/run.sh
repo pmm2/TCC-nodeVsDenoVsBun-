@@ -1,0 +1,1 @@
+docker build -t deno_docker . && docker run -it -p 8000:8000 deno_docker
