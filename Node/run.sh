@@ -1,0 +1,1 @@
+docker build -t node_docker . && docker run -it -p 3000:3000 node_docker

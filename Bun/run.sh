@@ -1,0 +1,1 @@
+docker build -t bun_docker . && docker run -it -p 8080:8080 bun_docker
